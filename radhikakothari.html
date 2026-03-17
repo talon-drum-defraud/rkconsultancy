@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Radhika Kothari — Consultant & Strategist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F7F3ED;
+    --warm-white: #FDFAF6;
+    --stone: #C4B49A;
+    --terracotta: #C4714A;
+    --deep-forest: #2A3D30;
+    --charcoal: #2C2C2C;
+    --mid: #6B6B6B;
+    --light-border: #E4DDD3;
+    --gold: #A8885A;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 5vw;
+    background: rgba(253, 250, 246, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--light-border);
+    transition: all 0.3s ease;
+  }
+  .nav-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--deep-forest);
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mid);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--terracotta); }
+  .nav-cta {
+    font-size: 0.82rem; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--terracotta) !important;
+    border: 1px solid var(--terracotta);
+    padding: 0.45rem 1.1rem;
+    border-radius: 2px;
+    transition: all 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--terracotta); color: white !important; }
+
+  .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+  .burger span { display: block; width: 22px; height: 1.5px; background: var(--charcoal); transition: all 0.3s; }
+
+  .mobile-menu {
+    display: none;
+    position: fixed; top: 62px; left: 0; right: 0; z-index: 99;
+    background: var(--warm-white);
+    border-bottom: 1px solid var(--light-border);
+    padding: 1.5rem 5vw 2rem;
+    flex-direction: column; gap: 1.5rem;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-size: 1rem; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--charcoal); text-decoration: none; font-weight: 400;
+  }
+  .mobile-menu a:last-child {
+    color: var(--terracotta); border: 1px solid var(--terracotta);
+    padding: 0.6rem 1.2rem; text-align: center;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 62px;
+  }
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 6vw 5vw 6vw 8vw;
+    background: var(--warm-white);
+  }
+  .hero-eyebrow {
+    font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--terracotta); font-weight: 500; margin-bottom: 1.8rem;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .hero-eyebrow::before {
+    content: ''; display: block; width: 32px; height: 1px; background: var(--terracotta);
+  }
+  .hero-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 5vw, 4.4rem);
+    font-weight: 300; line-height: 1.12;
+    color: var(--deep-forest); margin-bottom: 2rem;
+  }
+  .hero-headline em { font-style: italic; color: var(--terracotta); font-weight: 400; }
+  .hero-sub {
+    font-size: 1rem; line-height: 1.75; color: var(--mid);
+    max-width: 420px; margin-bottom: 3rem; font-weight: 300;
+  }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-block;
+    background: var(--deep-forest); color: var(--cream);
+    padding: 0.85rem 2rem; font-size: 0.82rem;
+    letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500;
+    text-decoration: none; border-radius: 2px;
+    transition: all 0.25s;
+  }
+  .btn-primary:hover { background: var(--terracotta); }
+  .btn-ghost {
+    display: inline-block;
+    border: 1px solid var(--stone); color: var(--charcoal);
+    padding: 0.85rem 2rem; font-size: 0.82rem;
+    letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500;
+    text-decoration: none; border-radius: 2px;
+    transition: all 0.25s;
+  }
+  .btn-ghost:hover { border-color: var(--terracotta); color: var(--terracotta); }
+  .hero-credentials {
+    margin-top: 3rem; padding-top: 2rem;
+    border-top: 1px solid var(--light-border);
+    display: flex; gap: 2rem; flex-wrap: wrap;
+  }
+  .credential { font-size: 0.78rem; color: var(--mid); letter-spacing: 0.05em; }
+  .credential strong { display: block; color: var(--charcoal); font-weight: 500; font-size: 0.85rem; }
+
+  .hero-right {
+    position: relative; overflow: hidden;
+    background: var(--deep-forest);
+  }
+  .hero-photo {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.88;
+    display: block;
+  }
+  .hero-photo-placeholder {
+    width: 100%; height: 100%; min-height: 600px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    background: var(--deep-forest);
+    position: relative; overflow: hidden;
+  }
+  /* Decorative SVG placeholder scene */
+  .hero-photo-placeholder svg { width: 100%; height: 100%; position: absolute; inset: 0; }
+  .hero-caption {
+    position: absolute; bottom: 2rem; left: 2rem; right: 2rem;
+    font-size: 0.72rem; color: rgba(255,255,255,0.5); letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ── SECTION BASE ── */
+  section { padding: 7rem 8vw; }
+  .section-label {
+    font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--terracotta); font-weight: 500; margin-bottom: 1.2rem;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .section-label::before { content: ''; width: 24px; height: 1px; background: var(--terracotta); display: block; }
+  h2.section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
+    font-weight: 300; line-height: 1.2; color: var(--deep-forest);
+    margin-bottom: 1.5rem;
+  }
+  h2.section-title em { font-style: italic; color: var(--terracotta); }
+
+  /* ── WHY STRIP ── */
+  .why-strip {
+    background: var(--deep-forest);
+    color: var(--cream);
+    padding: 7rem 8vw;
+  }
+  .why-inner {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 6rem; align-items: start;
+  }
+  .why-left .section-label { color: var(--stone); }
+  .why-left .section-label::before { background: var(--stone); }
+  .why-left h2.section-title { color: var(--cream); }
+  .why-left h2.section-title em { color: var(--stone); }
+  .why-body { font-size: 1rem; line-height: 1.85; color: rgba(247,243,237,0.75); max-width: 460px; font-weight: 300; }
+  .why-body p + p { margin-top: 1.2rem; }
+
+  .why-right { display: flex; flex-direction: column; gap: 2rem; padding-top: 1rem; }
+  .why-card {
+    padding: 2rem; border: 1px solid rgba(196,180,154,0.25);
+    border-radius: 3px; background: rgba(255,255,255,0.04);
+    transition: border-color 0.3s;
+  }
+  .why-card:hover { border-color: rgba(196,180,154,0.6); }
+  .why-card-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; color: var(--stone); font-weight: 300;
+    margin-bottom: 0.6rem; opacity: 0.5;
+  }
+  .why-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem; font-weight: 500; color: var(--cream);
+    margin-bottom: 0.6rem;
+  }
+  .why-card p { font-size: 0.9rem; line-height: 1.7; color: rgba(247,243,237,0.65); }
+
+  /* ── PHOTOS SECTION ── */
+  .photos-section { padding: 5rem 0; background: var(--cream); overflow: hidden; }
+  .photos-header { padding: 0 8vw 3rem; }
+  .photo-strip {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1.4fr;
+    gap: 0;
+    height: 480px;
+  }
+  .photo-item {
+    position: relative; overflow: hidden;
+    cursor: default;
+  }
+  .photo-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; display: block; }
+  .photo-item:hover img { transform: scale(1.04); }
+  .photo-caption {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 1.5rem 1.2rem 1rem;
+    background: linear-gradient(transparent, rgba(42,61,48,0.75));
+    color: white; font-size: 0.75rem; letter-spacing: 0.08em;
+    text-transform: uppercase; opacity: 0; transition: opacity 0.3s;
+  }
+  .photo-item:hover .photo-caption { opacity: 1; }
+
+  /* SVG placeholder photos */
+  .photo-placeholder {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+
+  /* ── HOW I WORK ── */
+  .how-section { background: var(--warm-white); }
+  .how-inner { display: grid; grid-template-columns: 1fr 1.6fr; gap: 6rem; align-items: start; }
+  .how-intro p { font-size: 1rem; line-height: 1.85; color: var(--mid); font-weight: 300; margin-top: 1.5rem; }
+  .how-intro p + p { margin-top: 1rem; }
+  .how-quote {
+    margin-top: 2.5rem; padding: 1.8rem 2rem;
+    border-left: 3px solid var(--terracotta);
+    background: var(--cream); border-radius: 0 3px 3px 0;
+  }
+  .how-quote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem; font-style: italic; font-weight: 400;
+    line-height: 1.5; color: var(--deep-forest);
+    margin: 0 !important;
+  }
+  .how-quote cite { display: block; font-size: 0.78rem; color: var(--mid); margin-top: 0.8rem; font-style: normal; letter-spacing: 0.06em; text-transform: uppercase; }
+
+  .how-services { display: flex; flex-direction: column; gap: 0; }
+  .service-row {
+    display: grid; grid-template-columns: 48px 1fr auto;
+    gap: 1.5rem; align-items: start;
+    padding: 2rem 0; border-bottom: 1px solid var(--light-border);
+    transition: all 0.2s; cursor: default;
+  }
+  .service-row:first-child { border-top: 1px solid var(--light-border); }
+  .service-row:hover { padding-left: 0.5rem; }
+  .service-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; color: var(--terracotta); font-weight: 400;
+    padding-top: 0.2rem;
+  }
+  .service-content h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 500; color: var(--deep-forest);
+    margin-bottom: 0.5rem;
+  }
+  .service-content p { font-size: 0.88rem; line-height: 1.7; color: var(--mid); }
+  .service-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.8rem; }
+  .tag {
+    font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.25rem 0.7rem; border: 1px solid var(--light-border);
+    border-radius: 2px; color: var(--mid);
+  }
+  .service-arrow { font-size: 1.2rem; color: var(--stone); padding-top: 0.3rem; transition: transform 0.2s, color 0.2s; }
+  .service-row:hover .service-arrow { transform: translateX(4px); color: var(--terracotta); }
+
+  /* ── WHO I WORK WITH ── */
+  .who-section { background: var(--cream); }
+  .who-inner { display: grid; grid-template-columns: 1fr 2fr; gap: 6rem; align-items: start; }
+  .who-intro p { font-size: 1rem; line-height: 1.85; color: var(--mid); font-weight: 300; margin-top: 1.5rem; }
+  .who-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .who-card {
+    background: var(--warm-white); padding: 2rem 1.8rem;
+    border-radius: 3px; border: 1px solid var(--light-border);
+    transition: all 0.3s; position: relative; overflow: hidden;
+  }
+  .who-card::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+    height: 3px; background: var(--terracotta);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .who-card:hover::after { transform: scaleX(1); }
+  .who-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(42,61,48,0.08); }
+  .who-icon { font-size: 1.6rem; margin-bottom: 1rem; }
+  .who-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; font-weight: 500; color: var(--deep-forest);
+    margin-bottom: 0.3rem;
+  }
+  .who-card .sub { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 0.8rem; font-weight: 500; }
+  .who-card p { font-size: 0.88rem; line-height: 1.7; color: var(--mid); }
+
+  /* ── STORY SECTION ── */
+  .story-section { background: var(--warm-white); }
+  .story-inner {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 6rem; align-items: center;
+  }
+  .story-photo-wrap { position: relative; }
+  .story-img-main {
+    width: 100%; aspect-ratio: 3/4; object-fit: cover;
+    border-radius: 3px; display: block;
+  }
+  .story-img-placeholder {
+    width: 100%; aspect-ratio: 3/4;
+    border-radius: 3px; overflow: hidden;
+    position: relative;
+  }
+  .story-credential-badge {
+    position: absolute; bottom: -1.5rem; right: -1.5rem;
+    background: var(--terracotta); color: white;
+    padding: 1.2rem 1.5rem; border-radius: 3px;
+    text-align: center;
+  }
+  .story-credential-badge strong {
+    display: block; font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem; font-weight: 300; line-height: 1;
+  }
+  .story-credential-badge span { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.85; }
+
+  .story-text { padding-bottom: 2rem; }
+  .story-text p {
+    font-size: 1rem; line-height: 1.85; color: var(--mid);
+    font-weight: 300; margin-bottom: 1.2rem;
+  }
+  .story-text p.lead {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.45rem; font-style: italic; font-weight: 400;
+    color: var(--deep-forest); line-height: 1.5; margin-bottom: 1.8rem;
+  }
+  .credentials-row {
+    display: flex; gap: 0; margin-top: 2.5rem;
+    border: 1px solid var(--light-border); border-radius: 3px; overflow: hidden;
+  }
+  .cred-item {
+    flex: 1; padding: 1.2rem 1.5rem;
+    border-right: 1px solid var(--light-border);
+    text-align: center;
+  }
+  .cred-item:last-child { border-right: none; }
+  .cred-item strong {
+    display: block; font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; color: var(--terracotta); font-weight: 500;
+  }
+  .cred-item span { font-size: 0.72rem; color: var(--mid); letter-spacing: 0.06em; text-transform: uppercase; }
+
+  /* ── TESTIMONIAL ── */
+  .testimonial-section {
+    background: var(--deep-forest); padding: 6rem 8vw;
+    text-align: center;
+  }
+  .testimonial-section blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 300; font-style: italic;
+    color: var(--cream); line-height: 1.45; max-width: 800px; margin: 0 auto;
+  }
+  .testimonial-section cite {
+    display: block; margin-top: 2rem;
+    font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--stone); font-style: normal;
+  }
+  .testimonial-section .t-mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem; color: var(--terracotta); opacity: 0.35;
+    line-height: 1; margin-bottom: -1rem; display: block;
+  }
+
+  /* ── CONTACT ── */
+  .contact-section { background: var(--cream); }
+  .contact-inner {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 6rem; align-items: start;
+  }
+  .contact-left h2.section-title { margin-bottom: 1rem; }
+  .contact-left p { font-size: 1rem; line-height: 1.8; color: var(--mid); font-weight: 300; margin-bottom: 2rem; }
+  .contact-info { display: flex; flex-direction: column; gap: 1rem; }
+  .contact-line {
+    display: flex; align-items: center; gap: 1rem;
+    font-size: 0.9rem; color: var(--charcoal); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .contact-line:hover { color: var(--terracotta); }
+  .contact-icon { width: 36px; height: 36px; border: 1px solid var(--light-border); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; flex-shrink: 0; }
+
+  .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .field { display: flex; flex-direction: column; gap: 0.4rem; }
+  .field label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); font-weight: 500; }
+  .field input, .field textarea, .field select {
+    background: var(--warm-white); border: 1px solid var(--light-border);
+    padding: 0.85rem 1rem; font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem; color: var(--charcoal); border-radius: 2px;
+    transition: border-color 0.2s; outline: none;
+    width: 100%;
+  }
+  .field input:focus, .field textarea:focus, .field select:focus { border-color: var(--terracotta); }
+  .field textarea { resize: vertical; min-height: 120px; }
+  .honeypot { display: none !important; }
+  .submit-btn {
+    display: inline-block; width: 100%;
+    background: var(--terracotta); color: white;
+    padding: 1rem; text-align: center;
+    font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase;
+    font-weight: 500; border: none; border-radius: 2px;
+    cursor: pointer; transition: background 0.25s; font-family: 'DM Sans', sans-serif;
+  }
+  .submit-btn:hover { background: var(--deep-forest); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--charcoal); color: rgba(247,243,237,0.6);
+    padding: 2.5rem 8vw;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; color: var(--cream); font-weight: 400; letter-spacing: 0.03em;
+  }
+  .footer-links { display: flex; gap: 2rem; list-style: none; }
+  .footer-links a {
+    font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase;
+    color: rgba(247,243,237,0.5); text-decoration: none; transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--stone); }
+  .footer-copy { font-size: 0.75rem; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up { animation: fadeUp 0.7s ease both; }
+  .delay-1 { animation-delay: 0.15s; }
+  .delay-2 { animation-delay: 0.3s; }
+  .delay-3 { animation-delay: 0.45s; }
+  .delay-4 { animation-delay: 0.6s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .burger { display: flex; }
+
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 4rem 6vw 3rem; order: 2; }
+    .hero-right { order: 1; min-height: 55vw; }
+    .hero-photo-placeholder { min-height: 55vw; }
+
+    .photo-strip { grid-template-columns: 1fr 1fr; height: auto; }
+    .photo-item { height: 240px; }
+    .photo-strip .photo-item:nth-child(3),
+    .photo-strip .photo-item:nth-child(4) { display: none; }
+
+    .why-inner,
+    .how-inner,
+    .who-inner,
+    .story-inner,
+    .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+
+    .story-credential-badge { right: 1rem; bottom: 1rem; }
+    .credentials-row { flex-wrap: wrap; }
+    .cred-item { min-width: 40%; }
+
+    .who-cards { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+
+    section { padding: 5rem 6vw; }
+    .why-strip { padding: 5rem 6vw; }
+    footer { flex-direction: column; align-items: flex-start; gap: 1.2rem; }
+    .footer-links { flex-wrap: wrap; gap: 1rem; }
+  }
+
+  @media (max-width: 480px) {
+    .hero-headline { font-size: 2.2rem; }
+    .photo-strip { grid-template-columns: 1fr; }
+    .photo-strip .photo-item:nth-child(3) { display: block; }
+    .photo-item { height: 280px; }
+    section { padding: 4rem 5vw; }
+    .why-strip { padding: 4rem 5vw; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-name">Radhika Kothari</a>
+  <ul class="nav-links">
+    <li><a href="#photos">Work</a></li>
+    <li><a href="#why">Why It Matters</a></li>
+    <li><a href="#how">How I Help</a></li>
+    <li><a href="#who">Who I Work With</a></li>
+    <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
+  </ul>
+  <button class="burger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#photos" onclick="closeMenu()">Work</a>
+  <a href="#why" onclick="closeMenu()">Why It Matters</a>
+  <a href="#how" onclick="closeMenu()">How I Help</a>
+  <a href="#who" onclick="closeMenu()">Who I Work With</a>
+  <a href="#contact" onclick="closeMenu()">Let's Talk →</a>
+</div>
+
+<!-- 1. HERO -->
+<section class="hero" style="padding:0">
+  <div class="hero-left">
+    <p class="hero-eyebrow fade-up">radhikakothari.com</p>
+    <h1 class="hero-headline fade-up delay-1">
+      Purpose starts the work.<br>
+      But it takes <em>the right guide</em><br>
+      to sustain it.
+    </h1>
+    <p class="hero-sub fade-up delay-2">
+      I'm Radhika — consultant, strategist, and connector working with organisations shaping lasting change. For fifteen years I've sat at the table when the stakes were highest, turning bold visions into clear, real-world results.
+    </p>
+    <div class="hero-actions fade-up delay-3">
+      <a href="#how" class="btn-primary">Explore How I Work</a>
+      <a href="#contact" class="btn-ghost">Let's Talk</a>
+    </div>
+    <div class="hero-credentials fade-up delay-4">
+      <div class="credential"><strong>Cambridge MPhil</strong>Development Studies</div>
+      <div class="credential"><strong>Dalai Lama Fellow</strong>Cohort 2017</div>
+      <div class="credential"><strong>15+ Years</strong>Social Impact</div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-photo-placeholder">
+      <svg viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <!-- Background layers -->
+        <rect width="600" height="800" fill="#2A3D30"/>
+        <rect width="600" height="800" fill="url(#heroGrad)" opacity="0.6"/>
+        <!-- Warm light overlay -->
+        <ellipse cx="350" cy="250" rx="280" ry="320" fill="#C4714A" opacity="0.12"/>
+        <ellipse cx="150" cy="600" rx="200" ry="200" fill="#A8885A" opacity="0.08"/>
+        <!-- Silhouette: person at desk/working -->
+        <!-- Desk surface -->
+        <rect x="80" y="520" width="440" height="18" rx="4" fill="#3D5544" opacity="0.9"/>
+        <!-- Laptop -->
+        <rect x="220" y="440" width="160" height="10" rx="3" fill="#4A6355" opacity="0.8"/>
+        <rect x="235" y="340" width="130" height="100" rx="4" fill="#4A6355" opacity="0.8"/>
+        <rect x="242" y="348" width="116" height="86" rx="2" fill="#2A3D30" opacity="0.9"/>
+        <!-- Screen glow -->
+        <rect x="242" y="348" width="116" height="86" rx="2" fill="#C4714A" opacity="0.07"/>
+        <!-- Books / papers on desk -->
+        <rect x="100" y="492" width="90" height="28" rx="2" fill="#5C7260" opacity="0.7"/>
+        <rect x="105" y="486" width="80" height="28" rx="2" fill="#6B8470" opacity="0.6"/>
+        <rect x="112" y="480" width="65" height="28" rx="2" fill="#7A9480" opacity="0.5"/>
+        <!-- Coffee cup -->
+        <ellipse cx="420" cy="510" rx="18" ry="10" fill="#4A6355" opacity="0.8"/>
+        <rect x="402" y="480" width="36" height="30" rx="3" fill="#4A6355" opacity="0.8"/>
+        <path d="M438 490 Q455 495 453 505 Q451 515 438 512" stroke="#5C7260" stroke-width="3" fill="none" opacity="0.7"/>
+        <!-- Steam -->
+        <path d="M415 476 Q413 466 416 458" stroke="#A8885A" stroke-width="1.5" fill="none" opacity="0.4"/>
+        <path d="M422 474 Q420 462 423 454" stroke="#A8885A" stroke-width="1.5" fill="none" opacity="0.4"/>
+        <!-- Person seated silhouette -->
+        <!-- Head -->
+        <circle cx="305" cy="200" r="52" fill="#3D2E1A" opacity="0.85"/>
+        <!-- Hair suggestion -->
+        <ellipse cx="305" cy="172" rx="52" ry="28" fill="#2A1F10" opacity="0.7"/>
+        <!-- Shoulders + torso -->
+        <path d="M200 380 Q220 300 305 288 Q390 300 410 380 L430 520 L180 520 Z" fill="#3D2E1A" opacity="0.8"/>
+        <!-- Jacket/blazer suggestion -->
+        <path d="M220 320 Q250 295 305 290 Q250 340 220 400 Z" fill="#2A1F10" opacity="0.4"/>
+        <path d="M390 320 Q360 295 305 290 Q360 340 390 400 Z" fill="#2A1F10" opacity="0.4"/>
+        <!-- Arm reaching toward laptop -->
+        <path d="M385 400 Q400 430 380 460 Q360 480 330 490" stroke="#3D2E1A" stroke-width="38" stroke-linecap="round" fill="none" opacity="0.85"/>
+        <!-- Scarf / detail -->
+        <path d="M265 295 Q285 310 305 305 Q325 300 345 295" stroke="#C4714A" stroke-width="5" fill="none" opacity="0.5"/>
+
+        <!-- Bokeh / ambient dots -->
+        <circle cx="80" cy="150" r="6" fill="#A8885A" opacity="0.15"/>
+        <circle cx="520" cy="80" r="10" fill="#C4714A" opacity="0.1"/>
+        <circle cx="480" cy="680" r="8" fill="#A8885A" opacity="0.12"/>
+        <circle cx="60" cy="700" r="14" fill="#C4714A" opacity="0.08"/>
+
+        <!-- Floating text elements (field notes feel) -->
+        <text x="60" y="660" font-family="Georgia, serif" font-size="9" fill="#C4B49A" opacity="0.3" transform="rotate(-2 60 660)">strategy · systems · change</text>
+
+        <defs>
+          <linearGradient id="heroGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#2A3D30" stop-opacity="0.3"/>
+            <stop offset="100%" stop-color="#1A2520" stop-opacity="0.8"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <div class="hero-caption">Radhika at work — radhikakothari.com</div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. PHOTOS OF ME WORKING -->
+<div id="photos" class="photos-section">
+  <div class="photos-header">
+    <p class="section-label">In the Field</p>
+    <h2 class="section-title">The work, <em>up close</em></h2>
+  </div>
+  <div class="photo-strip">
+
+    <!-- Photo 1: Workshop facilitation -->
+    <div class="photo-item">
+      <div class="photo-placeholder" style="height:100%">
+        <svg width="100%" height="100%" viewBox="0 0 400 480" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0">
+          <rect width="400" height="480" fill="#C4B49A"/>
+          <rect width="400" height="480" fill="url(#wg1)" opacity="0.5"/>
+          <!-- Whiteboard -->
+          <rect x="40" y="60" width="300" height="180" rx="4" fill="#F7F3ED" opacity="0.9"/>
+          <rect x="50" y="70" width="280" height="160" rx="2" fill="#FDFAF6" opacity="0.8"/>
+          <!-- Diagram on board -->
+          <circle cx="155" cy="150" r="35" fill="none" stroke="#C4714A" stroke-width="2" opacity="0.7"/>
+          <circle cx="245" cy="150" r="35" fill="none" stroke="#2A3D30" stroke-width="2" opacity="0.7"/>
+          <text x="140" y="154" font-family="Georgia" font-size="10" fill="#C4714A" opacity="0.8">Impact</text>
+          <text x="226" y="154" font-family="Georgia" font-size="10" fill="#2A3D30" opacity="0.8">Strategy</text>
+          <!-- Arrow on board -->
+          <line x1="100" y1="100" x2="290" y2="100" stroke="#A8885A" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.5"/>
+          <!-- Person presenting - silhouette -->
+          <circle cx="190" cy="310" r="28" fill="#3D2E1A" opacity="0.75"/>
+          <path d="M130 420 Q145 370 190 355 Q235 370 250 420 L260 480 L120 480 Z" fill="#3D2E1A" opacity="0.7"/>
+          <path d="M250 375 Q290 360 310 310" stroke="#3D2E1A" stroke-width="22" stroke-linecap="round" fill="none" opacity="0.7"/>
+          <!-- Audience suggestion -->
+          <circle cx="60" cy="400" r="18" fill="#4A3520" opacity="0.5"/>
+          <circle cx="330" cy="390" r="18" fill="#4A3520" opacity="0.5"/>
+          <circle cx="360" cy="430" r="16" fill="#4A3520" opacity="0.4"/>
+          <defs><linearGradient id="wg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#B8A88A"/><stop offset="100%" stop-color="#8A7A5A" stop-opacity="0.6"/></linearGradient></defs>
+        </svg>
+      </div>
+      <div class="photo-caption">Facilitating strategy workshops</div>
+    </div>
+
+    <!-- Photo 2: 1:1 meeting -->
+    <div class="photo-item">
+      <div class="photo-placeholder" style="height:100%">
+        <svg width="100%" height="100%" viewBox="0 0 400 480" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0">
+          <rect width="400" height="480" fill="#2A3D30"/>
+          <rect width="400" height="480" fill="url(#mg1)" opacity="0.4"/>
+          <!-- Table -->
+          <rect x="60" y="280" width="280" height="12" rx="3" fill="#4A6355" opacity="0.8"/>
+          <!-- Papers / notebooks on table -->
+          <rect x="80" y="240" width="80" height="40" rx="2" fill="#6B8470" opacity="0.6" transform="rotate(-3 80 240)"/>
+          <rect x="220" y="238" width="100" height="42" rx="2" fill="#F7F3ED" opacity="0.3" transform="rotate(2 220 238)"/>
+          <!-- Person 1 (Radhika) - left -->
+          <circle cx="140" cy="160" r="35" fill="#3D2E1A" opacity="0.9"/>
+          <path d="M80 280 Q100 220 140 210 Q180 220 200 280 L210 480 L70 480 Z" fill="#3D2E1A" opacity="0.85"/>
+          <!-- Person 2 - right -->
+          <circle cx="265" cy="160" r="32" fill="#4A3520" opacity="0.8"/>
+          <path d="M205 280 Q225 220 265 212 Q305 220 320 280 L330 480 L200 480 Z" fill="#4A3520" opacity="0.75"/>
+          <!-- Connection line -->
+          <line x1="175" y1="160" x2="233" y2="160" stroke="#C4714A" stroke-width="1" stroke-dasharray="3 4" opacity="0.4"/>
+          <!-- Light source -->
+          <circle cx="200" cy="80" r="40" fill="#C4714A" opacity="0.08"/>
+          <defs><linearGradient id="mg1" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#1A2520"/><stop offset="100%" stop-color="#3D5544" stop-opacity="0.5"/></linearGradient></defs>
+        </svg>
+      </div>
+      <div class="photo-caption">Deep-dive consultations</div>
+    </div>
+
+    <!-- Photo 3: Fieldwork -->
+    <div class="photo-item">
+      <div class="photo-placeholder" style="height:100%">
+        <svg width="100%" height="100%" viewBox="0 0 400 480" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0">
+          <rect width="400" height="480" fill="#4A6355"/>
+          <!-- Sky gradient -->
+          <rect width="400" height="240" fill="url(#skyg)" opacity="0.8"/>
+          <!-- Mountains / hills suggestion -->
+          <path d="M0 300 Q80 200 160 250 Q240 180 320 230 Q370 200 400 220 L400 480 L0 480 Z" fill="#2A3D30" opacity="0.9"/>
+          <path d="M0 340 Q100 260 200 300 Q300 240 400 280 L400 480 L0 480 Z" fill="#1A2A1E" opacity="0.95"/>
+          <!-- Prayer flags suggestion -->
+          <line x1="50" y1="180" x2="350" y2="160" stroke="#C4B49A" stroke-width="1" opacity="0.4"/>
+          <rect x="80" y="172" width="18" height="14" fill="#C4714A" opacity="0.6"/>
+          <rect x="120" y="169" width="18" height="14" fill="#F7F3ED" opacity="0.5"/>
+          <rect x="160" y="166" width="18" height="14" fill="#2A3D30" opacity="0.6"/>
+          <rect x="200" y="163" width="18" height="14" fill="#A8885A" opacity="0.6"/>
+          <rect x="240" y="161" width="18" height="14" fill="#C4714A" opacity="0.5"/>
+          <!-- Person silhouette in landscape -->
+          <circle cx="200" cy="290" r="22" fill="#3D2E1A" opacity="0.9"/>
+          <path d="M165 380 Q178 330 200 318 Q222 330 235 380 L240 430 L160 430 Z" fill="#3D2E1A" opacity="0.9"/>
+          <!-- Notepad -->
+          <rect x="212" y="340" width="28" height="36" rx="2" fill="#F7F3ED" opacity="0.4" transform="rotate(10 212 340)"/>
+          <defs><linearGradient id="skyg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#A8885A" stop-opacity="0.5"/><stop offset="100%" stop-color="#4A6355" stop-opacity="0"/></linearGradient></defs>
+        </svg>
+      </div>
+      <div class="photo-caption">Field research & grassroots visits</div>
+    </div>
+
+    <!-- Photo 4: Speaking / conference -->
+    <div class="photo-item">
+      <div class="photo-placeholder" style="height:100%">
+        <svg width="100%" height="100%" viewBox="0 0 400 480" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0">
+          <rect width="400" height="480" fill="#1A2520"/>
+          <!-- Stage light beams -->
+          <path d="M200 0 L100 480 L300 480 Z" fill="#C4714A" opacity="0.06"/>
+          <path d="M180 0 L60 480 L320 480 Z" fill="#A8885A" opacity="0.04"/>
+          <!-- Podium -->
+          <rect x="165" y="310" width="70" height="80" rx="3" fill="#3D5544" opacity="0.8"/>
+          <rect x="155" y="305" width="90" height="15" rx="2" fill="#4A6355" opacity="0.9"/>
+          <!-- Microphone -->
+          <rect x="197" y="270" width="6" height="35" fill="#2A3D30" opacity="0.8"/>
+          <ellipse cx="200" cy="265" rx="10" ry="13" fill="#4A6355" opacity="0.9"/>
+          <!-- Speaker silhouette -->
+          <circle cx="200" cy="200" r="38" fill="#3D2E1A" opacity="0.9"/>
+          <path d="M135 310 Q155 250 200 238 Q245 250 265 310 L275 480 L125 480 Z" fill="#3D2E1A" opacity="0.85"/>
+          <!-- Hands gesture -->
+          <path d="M135 280 Q100 260 90 240" stroke="#3D2E1A" stroke-width="24" stroke-linecap="round" fill="none" opacity="0.85"/>
+          <path d="M265 280 Q300 260 310 240" stroke="#3D2E1A" stroke-width="24" stroke-linecap="round" fill="none" opacity="0.85"/>
+          <!-- Audience dots -->
+          <circle cx="60" cy="440" r="12" fill="#2A3D30" opacity="0.6"/>
+          <circle cx="90" cy="460" r="12" fill="#2A3D30" opacity="0.5"/>
+          <circle cx="320" cy="435" r="12" fill="#2A3D30" opacity="0.6"/>
+          <circle cx="350" cy="455" r="12" fill="#2A3D30" opacity="0.5"/>
+          <!-- Spotlight circle on speaker -->
+          <circle cx="200" cy="220" r="90" fill="#C4714A" opacity="0.05"/>
+        </svg>
+      </div>
+      <div class="photo-caption">Speaking at sector conferences</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 3. WHY THIS MATTERS -->
+<div id="why" class="why-strip">
+  <div class="why-inner">
+    <div class="why-left">
+      <p class="section-label">Why This Matters</p>
+      <h2 class="section-title">The gap between <em>vision and reality</em> is where most organisations lose their way.</h2>
+      <div class="why-body">
+        <p>I've spent fifteen years in the room when the stakes are highest — with founders trying to scale without losing their soul, with NGOs navigating funder pressure, with grassroots collectives that have extraordinary impact but fragile infrastructure.</p>
+        <p>The pattern I've seen again and again: organisations led by brilliant, purpose-driven people who are exhausted, unclear, or unable to articulate their value to the world. Not because they lack commitment. Because no one helped them build the right architecture around their mission.</p>
+        <p>That's what I do. With care, directness, and deep respect for what you're trying to build.</p>
+      </div>
+    </div>
+    <div class="why-right">
+      <div class="why-card">
+        <div class="why-card-num">01</div>
+        <h3>Clarity is power</h3>
+        <p>When an organisation knows exactly what it stands for and why — funders listen, teams align, and communities trust. Clarity isn't a communications task. It's a strategic one.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-num">02</div>
+        <h3>Systems make impact sustainable</h3>
+        <p>Passion drives the first mile. But strong operating models, clear roles, and honest measurement frameworks carry organisations through the next ten.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-num">03</div>
+        <h3>Relationships are the real infrastructure</h3>
+        <p>After fifteen years, I bring not just frameworks but a network — connectors, funders, ecosystem builders — who can open doors that hard work alone cannot.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 4. HOW I WORK -->
+<section id="how" class="how-section">
+  <div class="how-inner">
+    <div class="how-intro">
+      <p class="section-label">How I Can Help</p>
+      <h2 class="section-title">Bespoke support, <em>not off-the-shelf</em> programmes.</h2>
+      <p>I don't arrive with a fixed methodology and map your world onto it. I come in, listen deeply, and figure out what this organisation — in this moment — actually needs.</p>
+      <p>Every engagement is shaped around your specific context, capacity, and ambition. Here's the general territory I work in:</p>
+      <div class="how-quote">
+        <p>"I'm not here to tick boxes. I'm here to roll up my sleeves alongside you."</p>
+        <cite>— Radhika Kothari</cite>
+      </div>
+    </div>
+    <div class="how-services">
+      <div class="service-row">
+        <span class="service-num">01</span>
+        <div class="service-content">
+          <h3>Align — Strategy & Clarity</h3>
+          <p>For leadership teams at an inflection point. We clarify priorities, sharpen positioning, and map a credible path forward — together.</p>
+          <div class="service-tags">
+            <span class="tag">Strategy</span>
+            <span class="tag">Diagnostics</span>
+            <span class="tag">Fundraising Readiness</span>
+            <span class="tag">Theory of Change</span>
+          </div>
+        </div>
+        <span class="service-arrow">→</span>
+      </div>
+      <div class="service-row">
+        <span class="service-num">02</span>
+        <div class="service-content">
+          <h3>Grow — Systems & Capability</h3>
+          <p>Strengthening the internal architecture that lets your organisation deliver consistently — without burning out the people who care most.</p>
+          <div class="service-tags">
+            <span class="tag">Operating Models</span>
+            <span class="tag">Role Clarity</span>
+            <span class="tag">Processes</span>
+            <span class="tag">Team Development</span>
+          </div>
+        </div>
+        <span class="service-arrow">→</span>
+      </div>
+      <div class="service-row">
+        <span class="service-num">03</span>
+        <div class="service-content">
+          <h3>Scale — Impact & Reach</h3>
+          <p>Expanding reach without losing integrity. Building the frameworks, governance, and partnerships that make sustainable impact measurable and credible.</p>
+          <div class="service-tags">
+            <span class="tag">MEL Frameworks</span>
+            <span class="tag">Governance</span>
+            <span class="tag">Partnerships</span>
+            <span class="tag">Stakeholder Engagement</span>
+          </div>
+        </div>
+        <span class="service-arrow">→</span>
+      </div>
+      <div class="service-row">
+        <span class="service-num">04</span>
+        <div class="service-content">
+          <h3>Connect — Networks & Access</h3>
+          <p>Leveraging fifteen years of relationships across social impact, philanthropy, and grassroots ecosystems to open doors that strategy alone can't unlock.</p>
+          <div class="service-tags">
+            <span class="tag">Funder Introductions</span>
+            <span class="tag">Ecosystem Navigation</span>
+            <span class="tag">Advisory</span>
+          </div>
+        </div>
+        <span class="service-arrow">→</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. WHO I WORK WITH -->
+<section id="who" class="who-section">
+  <div class="who-inner">
+    <div class="who-intro">
+      <p class="section-label">Who I Work With</p>
+      <h2 class="section-title">Organisations doing work that <em>matters.</em></h2>
+      <p>I work with a small number of clients at a time, because this kind of work demands full presence. The common thread isn't sector or size — it's the quality of commitment.</p>
+    </div>
+    <div class="who-cards">
+      <div class="who-card">
+        <div class="who-icon">🌱</div>
+        <div class="sub">Grassroots & Nonprofits</div>
+        <h3>NGOs & Community Organisations</h3>
+        <p>From grassroots collectives to established nonprofits navigating growth, transition, or institutional change.</p>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">⚡</div>
+        <div class="sub">Impact-First Ventures</div>
+        <h3>Social Enterprises</h3>
+        <p>Organisations blending commercial thinking with social purpose — building models that are both sustainable and meaningful.</p>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">🤝</div>
+        <div class="sub">Funders & Networks</div>
+        <h3>Foundations & Institutions</h3>
+        <p>Foundations seeking sharper strategy, stronger grantee ecosystems, and clearer impact frameworks for their portfolios.</p>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">🧭</div>
+        <div class="sub">Visionary Individuals</div>
+        <h3>Leaders & Founders</h3>
+        <p>Mission-driven individuals at a crossroads — stepping into a new role, launching something new, or navigating a period of profound change.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MY STORY -->
+<section id="story" class="story-section">
+  <div class="story-inner">
+    <div class="story-photo-wrap">
+      <div class="story-img-placeholder">
+        <svg width="100%" height="100%" viewBox="0 0 480 640" xmlns="http://www.w3.org/2000/svg" style="display:block">
+          <rect width="480" height="640" fill="#C4B49A"/>
+          <!-- Background wash -->
+          <rect width="480" height="640" fill="url(#storyBg)" opacity="0.6"/>
+          <!-- Natural setting elements -->
+          <!-- Hills far -->
+          <path d="M0 420 Q120 340 240 380 Q360 340 480 360 L480 640 L0 640 Z" fill="#4A6355" opacity="0.5"/>
+          <path d="M0 460 Q100 390 200 420 Q320 380 480 410 L480 640 L0 640 Z" fill="#2A3D30" opacity="0.7"/>
+          <!-- Ground -->
+          <rect x="0" y="520" width="480" height="120" fill="#1A2520" opacity="0.9"/>
+          <!-- Person portrait - Radhika silhouette -->
+          <!-- Body/clothes -->
+          <path d="M165 420 Q195 360 240 345 Q285 360 315 420 L330 640 L150 640 Z" fill="#2A1510" opacity="0.9"/>
+          <!-- Sari/scarf wrap suggestion -->
+          <path d="M165 420 Q150 380 160 350 Q180 330 200 340" stroke="#C4714A" stroke-width="8" fill="none" opacity="0.5"/>
+          <path d="M165 420 Q145 460 155 500" stroke="#C4714A" stroke-width="6" fill="none" opacity="0.4"/>
+          <!-- Head -->
+          <circle cx="240" cy="235" r="68" fill="#3D2010" opacity="0.9"/>
+          <!-- Hair - pulled back, elegant -->
+          <path d="M175 215 Q190 165 240 158 Q290 162 305 215" fill="#1A0F05" opacity="0.9"/>
+          <!-- Hair bun/tie suggestion -->
+          <circle cx="240" cy="165" r="22" fill="#1A0F05" opacity="0.8"/>
+          <!-- Face warmth (subtle) -->
+          <ellipse cx="240" cy="240" rx="55" ry="60" fill="#5C3018" opacity="0.4"/>
+          <!-- Glasses suggestion (scholarly) -->
+          <ellipse cx="224" cy="232" rx="18" ry="14" fill="none" stroke="#A8885A" stroke-width="2" opacity="0.5"/>
+          <ellipse cx="256" cy="232" rx="18" ry="14" fill="none" stroke="#A8885A" stroke-width="2" opacity="0.5"/>
+          <line x1="242" y1="232" x2="238" y2="232" stroke="#A8885A" stroke-width="2" opacity="0.5"/>
+          <!-- Arm / notebook -->
+          <path d="M165 380 Q130 360 115 330" stroke="#2A1510" stroke-width="32" stroke-linecap="round" fill="none" opacity="0.9"/>
+          <rect x="80" y="300" width="50" height="65" rx="3" fill="#F7F3ED" opacity="0.4" transform="rotate(-8 80 300)"/>
+          <!-- Warm sunlight on figure -->
+          <ellipse cx="240" cy="300" rx="160" ry="200" fill="#C4714A" opacity="0.06"/>
+          <defs>
+            <linearGradient id="storyBg" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#A8885A" stop-opacity="0.4"/>
+              <stop offset="60%" stop-color="#C4B49A" stop-opacity="0.1"/>
+              <stop offset="100%" stop-color="#2A3D30" stop-opacity="0.6"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="story-credential-badge">
+        <strong>15+</strong>
+        <span>Years in the field</span>
+      </div>
+    </div>
+    <div class="story-text">
+      <p class="section-label">My Story</p>
+      <h2 class="section-title">I didn't start with a <em>framework.</em> I started with questions.</h2>
+      <p class="lead">"Why do some organisations with extraordinary missions fail to sustain themselves — and what can actually be done about it?"</p>
+      <p>That question has driven fifteen years of work across three continents, from grassroots community programmes in South Asia to conservation initiatives in East Africa, from social enterprise accelerators to institutional philanthropies.</p>
+      <p>I completed my MPhil at Cambridge, where I focused on development economics and participatory approaches to change. Shortly after, I was selected as a Dalai Lama Fellow — a programme for young leaders committed to compassionate, systems-level impact.</p>
+      <p>Over the years, I've learned that the most important thing a consultant can bring isn't a methodology. It's the ability to see clearly, listen without agenda, and hold a mirror up with care and honesty. That's what I try to do in every engagement.</p>
+      <div class="credentials-row">
+        <div class="cred-item"><strong>MPhil</strong><span>Cambridge</span></div>
+        <div class="cred-item"><strong>DLF</strong><span>Dalai Lama Fellow</span></div>
+        <div class="cred-item"><strong>3</strong><span>Continents</span></div>
+        <div class="cred-item"><strong>50+</strong><span>Organisations</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<div class="testimonial-section">
+  <span class="t-mark">"</span>
+  <blockquote>
+    The support wasn't just strategic — it was transformational. Our team finally had the clarity to move forward with confidence. Radhika has a rare ability to hold complexity and distil it into something actionable.
+  </blockquote>
+  <cite>Director · Conservation Organisation · 2024</cite>
+</div>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="contact-inner">
+    <div class="contact-left">
+      <p class="section-label">Let's Talk</p>
+      <h2 class="section-title">Tell me about your <em>work.</em></h2>
+      <p>I take on a small number of clients each year. The conversation starts with listening — to where you are, where you want to go, and whether we're the right fit for each other.</p>
+      <div class="contact-info">
+        <a href="mailto:hello@radhikakothari.com" class="contact-line">
+          <span class="contact-icon">✉</span>
+          hello@radhikakothari.com
+        </a>
+        <a href="https://linkedin.com/in/radhikakothari" class="contact-line" target="_blank">
+          <span class="contact-icon">in</span>
+          linkedin.com/in/radhikakothari
+        </a>
+      </div>
+    </div>
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="field">
+          <label>Your Name</label>
+          <input type="text" name="name" placeholder="Full name" required>
+        </div>
+        <div class="field">
+          <label>Organisation</label>
+          <input type="text" name="org" placeholder="Your organisation">
+        </div>
+      </div>
+      <div class="field">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="your@email.com" required>
+      </div>
+      <div class="field">
+        <label>What you're working on</label>
+        <textarea name="message" placeholder="Tell me a little about your organisation and what you're navigating right now..." required></textarea>
+      </div>
+      <div class="field honeypot">
+        <label>Leave this empty</label>
+        <input type="text" name="_honey">
+      </div>
+      <button type="submit" class="submit-btn">Send a message →</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-name">Radhika Kothari</span>
+  <ul class="footer-links">
+    <li><a href="#photos">Work</a></li>
+    <li><a href="#why">Why It Matters</a></li>
+    <li><a href="#how">How I Help</a></li>
+    <li><a href="#who">Who I Work With</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#">Privacy</a></li>
+  </ul>
+  <span class="footer-copy">©2026 Radhika Kothari · radhikakothari.com</span>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+  function closeMenu() {
+    document.getElementById('mobileMenu').classList.remove('open');
+  }
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.submit-btn');
+    btn.textContent = 'Message sent ✓';
+    btn.style.background = 'var(--deep-forest)';
+    setTimeout(() => {
+      btn.textContent = 'Send a message →';
+      btn.style.background = '';
+      e.target.reset();
+    }, 3000);
+  }
+  // Smooth reveal on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.why-card, .service-row, .who-card, .cred-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
