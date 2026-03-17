@@ -4,7 +4,29 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Radhika Kothari — Consultant & Strategist</title>
+<meta name="description" content="Radhika Kothari is a consultant, strategist and connector with 15+ years working at the intersection of social impact, systems change and grassroots leadership.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://radhikakothari.com/">
+<meta property="og:title" content="Radhika Kothari — Consultant & Strategist">
+<meta property="og:description" content="Purpose starts the work. The right guide sustains it. Strategic consultancy for organisations shaping lasting change.">
+<meta property="og:image" content="https://talon-drum-defraud.github.io/rkconsultancy/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Radhika Kothari">
+<meta property="og:locale" content="en_GB">
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://radhikakothari.com/">
+<meta name="twitter:title" content="Radhika Kothari — Consultant & Strategist">
+<meta name="twitter:description" content="Purpose starts the work. The right guide sustains it. Strategic consultancy for organisations shaping lasting change.">
+<meta name="twitter:image" content="https://radhikakothari.com/og-image.jpg">
+
+<!-- Favicon -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'><rect width='80' height='80' rx='18' fill='%233D1F35'/><text x='40' y='52' text-anchor='middle' font-family='Georgia,serif' font-size='32' fill='%23C4714A' letter-spacing='-1'>RK</text></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'><rect width='80' height='80' rx='18' fill='%233D1F35'/><text x='40' y='52' text-anchor='middle' font-family='Georgia,serif' font-size='32' fill='%23C4714A' letter-spacing='-1'>RK</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -75,23 +97,34 @@
 
   .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
   .burger span { display: block; width: 22px; height: 1.5px; background: var(--charcoal); transition: all 0.3s; }
+  .burger.active span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .burger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .burger.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
   .mobile-menu {
-    display: none;
     position: fixed; top: 62px; left: 0; right: 0; z-index: 99;
     background: var(--warm-white);
     border-bottom: 1px solid var(--light-border);
-    padding: 1.5rem 5vw 2rem;
-    flex-direction: column; gap: 1.5rem;
+    padding: 0 5vw;
+    flex-direction: column; gap: 0;
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    display: flex;
   }
-  .mobile-menu.open { display: flex; }
+  .mobile-menu.open {
+    max-height: 400px;
+    padding: 1.5rem 5vw 2rem;
+  }
   .mobile-menu a {
     font-size: 1rem; letter-spacing: 0.06em; text-transform: uppercase;
     color: var(--charcoal); text-decoration: none; font-weight: 400;
+    padding: 0.6rem 0; border-bottom: 1px solid var(--light-border);
   }
   .mobile-menu a:last-child {
-    color: var(--terracotta); border: 1px solid var(--terracotta);
-    padding: 0.6rem 1.2rem; text-align: center;
+    border-bottom: none;
+    color: var(--terracotta); margin-top: 0.5rem;
+    border: 1px solid var(--terracotta);
+    padding: 0.6rem 1.2rem; text-align: center; border-radius: 2px;
   }
 
   /* ── HERO ── */
@@ -414,14 +447,15 @@
   }
   .contact-left h2.section-title { margin-bottom: 1rem; }
   .contact-left p { font-size: 1rem; line-height: 1.8; color: var(--mid); font-weight: 300; margin-bottom: 2rem; }
-  .contact-info { display: flex; flex-direction: column; gap: 1rem; }
+  .contact-info { display: flex; flex-direction: column; gap: 0.8rem; align-items: flex-start; }
   .contact-line {
-    display: flex; align-items: center; gap: 1rem;
+    display: inline-flex; align-items: center; gap: 1rem;
     font-size: 0.9rem; color: var(--charcoal); text-decoration: none;
-    transition: color 0.2s;
+    transition: color 0.2s; width: auto;
   }
   .contact-line:hover { color: var(--terracotta); }
-  .contact-icon { width: 36px; height: 36px; border: 1px solid var(--light-border); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; flex-shrink: 0; }
+  .contact-icon { width: 36px; height: 36px; border: 1px solid var(--light-border); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; flex-shrink: 0; transition: border-color 0.2s; }
+  .contact-line:hover .contact-icon { border-color: var(--terracotta); }
 
   .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
@@ -549,14 +583,14 @@
 <!-- 1. HERO -->
 <section class="hero" style="padding:0">
   <div class="hero-left">
-    <p class="hero-eyebrow fade-up">radhikakothari.com</p>
+    <p class="hero-eyebrow fade-up">Consultant · Strategist · Connector</p>
     <h1 class="hero-headline fade-up delay-1">
       Purpose starts the work.<br>
       But it takes <em>the right guide</em><br>
       to sustain it.
     </h1>
     <p class="hero-sub fade-up delay-2">
-      I'm Radhika — consultant, strategist, and connector working with organisations shaping lasting change. For fifteen years I've sat at the table when the stakes were highest, turning bold visions into clear, real-world results.
+      Based between London and Mumbai, I work with organisations shaping lasting change — turning bold visions into clear, real-world results across social impact, conservation, and grassroots sectors.
     </p>
     <div class="hero-actions fade-up delay-3">
       <a href="#how" class="btn-primary">Explore How I Work</a>
@@ -628,7 +662,7 @@
           </linearGradient>
         </defs>
       </svg>
-      <div class="hero-caption">Radhika at work — radhikakothari.com</div>
+      <div class="hero-caption">Strategy · Systems · Change</div>
     </div>
   </div>
 </section>
@@ -989,9 +1023,9 @@
       <h2 class="section-title">Tell me about your <em>work.</em></h2>
       <p>I take on a small number of clients each year. The conversation starts with listening — to where you are, where you want to go, and whether we're the right fit for each other.</p>
       <div class="contact-info">
-        <a href="/cdn-cgi/l/email-protection#0f676a6363604f7d6e6b6766646e64607b676e7d66216c6062" class="contact-line">
+        <a href="/cdn-cgi/l/email-protection#e38b868f8f8ca39182878b8a8882888c978b82918acd808c8e" class="contact-line">
           <span class="contact-icon">✉</span>
-          <span class="__cf_email__" data-cfemail="bfd7dad3d3d0ffcddedbd7d6d4ded4d0cbd7decdd691dcd0d2">[email&#160;protected]</span>
+          <span class="__cf_email__" data-cfemail="167e737a7a79566477727e7f7d777d79627e77647f3875797b">[email&#160;protected]</span>
         </a>
         <a href="https://linkedin.com/in/radhikakothari" class="contact-line" target="_blank">
           <span class="contact-icon">in</span>
@@ -1039,17 +1073,38 @@
     <li><a href="#contact">Contact</a></li>
     <li><a href="#">Privacy</a></li>
   </ul>
-  <span class="footer-copy">©2026 Radhika Kothari · radhikakothari.com</span>
+  <span class="footer-copy">©<span id="footer-year">2026</span> · radhikakothari.com</span>
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Hamburger menu
   function toggleMenu() {
-    document.getElementById('mobileMenu').classList.toggle('open');
+    const menu = document.getElementById('mobileMenu');
+    const burger = document.querySelector('.burger');
+    const isOpen = menu.classList.toggle('open');
+    burger.classList.toggle('active', isOpen);
+    burger.setAttribute('aria-expanded', isOpen);
   }
   function closeMenu() {
     document.getElementById('mobileMenu').classList.remove('open');
+    const burger = document.querySelector('.burger');
+    burger.classList.remove('active');
+    burger.setAttribute('aria-expanded', false);
   }
-  // Smooth reveal on scroll
+  // Close menu when clicking outside
+  document.addEventListener('click', function(e) {
+    const menu = document.getElementById('mobileMenu');
+    const burger = document.querySelector('.burger');
+    if (menu.classList.contains('open') && !menu.contains(e.target) && !burger.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
+  // Dynamic year
+  const yearEl = document.getElementById('footer-year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // Scroll reveal
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -1058,4 +1113,4 @@
       }
     });
   }, { threshold: 0.12 });
-  document.querySelectorAll('.why-card, 
+  document.querySelectorAll('.why-card, .se
