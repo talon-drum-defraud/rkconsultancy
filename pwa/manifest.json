@@ -1,0 +1,21 @@
+{
+  "short_name": "RK Consult",
+  "name": "Radhika Kothari - Strategic Consultant",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "radhikakothari-a.html",
+  "background_color": "#faf8f5",
+  "theme_color": "#1a365d",
+  "display": "standalone",
+  "orientation": "portrait-primary"
+}
